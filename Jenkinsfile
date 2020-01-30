@@ -39,7 +39,7 @@ triggers {
 		// If Gradle was able to run the tests, even if some of the test failed, record the test results and archive the jar file.
 		success {
 
-		//junit '**/target/surefire-reports/TEST-*.xml'
+		junit '**/target/surefire-reports/TEST-*.xml'
 		      archiveArtifacts '**/*.jar'
 		//All artifacts are stored in master server $JENKINS_HOME/jobs/<job>/builds/<build>/archive and published to jfrog artifactory
 			cleanWs()	

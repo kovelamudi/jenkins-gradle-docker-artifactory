@@ -1,0 +1,10 @@
+{
+	"port": 2019,
+	"influxHostname": "...",
+	"influxUsername": "...",
+	"influxPassword": "...",
+	"influxDatabase": "...",
+	"keys": [
+		"test"
+	]
+}

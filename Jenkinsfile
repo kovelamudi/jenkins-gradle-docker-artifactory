@@ -4,12 +4,6 @@ pipeline {
     stages {
 
        stage('Build') {
-          when {
-             anyOf {
-                 branch 'UAT'
-                 branch 'master'
-             }
-          }
           tools {
               gradle "gradle"
           }
@@ -21,13 +15,6 @@ pipeline {
        }
 
        stage("deploy to uat") {
-           when
-	   {
-	   anyOf {
-                branch 'UAT'
-		branch 'master'
-		}
-            }
            steps {
                sh "scp -r build/distributions/*.tar jenkins@192.168.110.100:bin/"
                sh "ssh jenkins@192.168.110.100 'chmod -w bin/*.tar'"
@@ -42,7 +29,6 @@ pipeline {
 
        success {
           script {
-              if (env.BRANCH_NAME == 'UAT')
                  archiveArtifacts '**/*.tar'
                  cleanWs()
           }

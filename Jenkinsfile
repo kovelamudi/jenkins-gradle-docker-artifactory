@@ -30,7 +30,7 @@ stages {
 	stage("deploy to uat") {
     			
 		steps {
-			sh "scp -r build/distributions/*.tar jenkins@192.168.110.100:/home/apache-tomcat-8.5.50/webapps/StaPI.tar"
+			sh "scp -r build/distributions/*.tar jenkins@192.168.110.100:/home/StaPI_rollout_UAT/StaPI.tar"
 		}
         }
 }

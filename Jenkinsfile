@@ -21,8 +21,9 @@ pipeline {
        }
 
        stage("deploy to uat") {
-           when {
+           when anyOf {
                 branch 'UAT'
+		branch 'master'
             }
            steps {
                sh "scp -r build/distributions/*.tar jenkins@192.168.110.100:bin/"

@@ -9,9 +9,11 @@ stages {
 	stage('Build') {
 		
 		when {
+		    anyof {	
                 	branch 'UAT'
-		}
-        
+			branch 'master'
+		    }
+                }
 		tools {
 			gradle "gradle"
 		}

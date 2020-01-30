@@ -9,7 +9,7 @@ stages {
 	stage('Build') {
 		
 		when {
-		    anyof {	
+		    anyOf {	
                 	branch 'UAT'
 			branch 'master'
 		    }

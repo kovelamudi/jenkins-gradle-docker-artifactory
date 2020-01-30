@@ -24,7 +24,7 @@ triggers {
 		
 	stage("deploy - uat") {
 					steps {
-	                                   sh "cp -r build/libs/*.jar /home/apache-tomcat-8.5.50/webapps/release.jar"
+	                                   sh "cp -r build/distributions/*.tar /home/apache-tomcat-8.5.50/webapps/StaPI.tar"
 					
 	}
 		}
@@ -39,8 +39,8 @@ triggers {
 		// If Gradle was able to run the tests, even if some of the test failed, record the test results and archive the jar file.
 		success {
 
-		junit '**/target/surefire-reports/TEST-*.xml'
-		      archiveArtifacts '**/*.jar'
+		//junit '**/target/surefire-reports/TEST-*.xml'
+		      archiveArtifacts '**/*.tar'
 		//All artifacts are stored in master server $JENKINS_HOME/jobs/<job>/builds/<build>/archive and published to jfrog artifactory
 			cleanWs()	
 		}

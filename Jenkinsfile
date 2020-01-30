@@ -1,8 +1,8 @@
 pipeline {
    agent {node{ label 'linux'}}
-triggers {
-        pollSCM '* * * * *'
-    }
+//triggers {
+  //      pollSCM '* * * * *'
+//    }
    stages {
 	stage('Build') {
 	// this is very important and configure this gradle tool in gobal tool configuration(master and slave) otherwise it errors out

@@ -1,6 +1,5 @@
 pipeline {
     agent {node{ label 'linux'}}
-    triggers { pollSCM(* * * * *) }
     stages {
 
        stage('Build') {

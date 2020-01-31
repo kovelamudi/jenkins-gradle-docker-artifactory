@@ -13,7 +13,7 @@ pipeline {
           }
        }
 
-       stage("deploy to uat") {
+       stage("deploy to UAT") {
            steps {
                sh "scp -r build/distributions/*.tar jenkins@192.168.110.100:bin/"
                sh "ssh jenkins@192.168.110.100 'chmod -w bin/*.tar'"

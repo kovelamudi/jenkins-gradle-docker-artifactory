@@ -22,8 +22,8 @@ pipeline {
     }
 
     post {
-       failure {
-          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Build failure for ${env.JOB_NAME}", body: "Project: ${env.JOB_NAME}\nBuild Number: ${env.BUILD_NUMBER}")
+       always {
+          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline: ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
        }
 
        success {

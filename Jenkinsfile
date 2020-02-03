@@ -4,11 +4,13 @@ pipeline {
     stages {
 
 stage("preserve build user") {
-steps{
+	steps{
             wrap([$class: 'BuildUser']) {
                 GET_BUILD_USER = sh ( script: 'echo "${BUILD_USER}"', returnStdout: true).trim()
             }
-      }  }
+      }  
+      }
+
        stage('Build') {
           tools {
               gradle "gradle"

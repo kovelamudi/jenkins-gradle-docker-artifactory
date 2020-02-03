@@ -4,6 +4,11 @@ environment {
 USER = 'MONITOR'
 }
     stages {
+    stage(env variables) {
+    steps {
+    sh "printenv"
+    }
+    }
 
        stage('Build') {
           tools {
@@ -19,7 +24,7 @@ USER = 'MONITOR'
 
        stage("deploy to UAT") {
            steps {
-               sh "scp -r build/distributions/*.tar jenkins@192.168.110.100:bin/"
+               sh "scp -r build/distributions/*.tar jenkins@192.168.110.100:bin/stapi32.tar"
                sh "ssh jenkins@192.168.110.100 'chmod -w bin/*.tar'"
            }
        }

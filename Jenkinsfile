@@ -9,7 +9,7 @@ pipeline {
 
           steps {
               sh "gradle clean"
-              sh "gradle build"
+              sh "gradle build artifactoryPublish"
           }
        }
 

@@ -6,8 +6,10 @@ pipeline {
 stage("preserve build user") {
 	steps{
             wrap([$class: 'BuildUser']) {
-                GET_BUILD_USER = sh ( script: 'echo "${BUILD_USER}"', returnStdout: true).trim()
-            }
+            script {
+             USER_ID = "${BUILD_USER_ID}"
+          }
+	    }
       }  
       }
 
@@ -33,7 +35,7 @@ stage("preserve build user") {
 
     post {
        always {
-          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline:user ${GET_BUILD_USER} and ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
+          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline:user ${USER_ID} and ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
        }
 
        success {

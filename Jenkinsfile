@@ -3,16 +3,6 @@ pipeline {
 
     stages {
 
-stage("preserve build user") {
-	steps{
-            wrap([$class: 'BuildUser']) {
-            script {
-             USER_ID = "${BUILD_USER_ID}"
-          }
-	    }
-      }  
-      }
-
        stage('Build') {
           tools {
               gradle "gradle"
@@ -35,7 +25,7 @@ stage("preserve build user") {
 
     post {
        always {
-          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline:user ${USER_ID} and ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
+          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline:user ${env.GIT_AUTHOR_NAME} and ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
        }
 
        success {

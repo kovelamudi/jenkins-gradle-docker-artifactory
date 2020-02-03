@@ -1,3 +1,4 @@
+buildscript{
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
@@ -12,8 +13,13 @@ repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
-}
+    dependencies {
+        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
+    }
 
+}
+}
 dependencies {
     compile 'org.influxdb:influxdb-java:2.15'
     compile group: 'javax.activation', name: 'activation', version: '1.1.1'

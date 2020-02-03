@@ -4,7 +4,6 @@ pipeline {
     stages {
 
 stage('example') {
-           agent {node { label 'linux' }}
            steps {
                script {
                    wrap([$class: 'BuildUser']) {

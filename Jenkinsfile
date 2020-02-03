@@ -23,7 +23,7 @@ pipeline {
 
     post {
        always {
-          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline: ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
+          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline:user ${env.BUILD_USER} and ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
        }
 
        success {

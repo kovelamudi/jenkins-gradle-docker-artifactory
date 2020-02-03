@@ -4,9 +4,10 @@ environment {
 USER = 'MONITOR'
 }
     stages {
-    stage(env variables) {
-    steps {
-    sh "printenv"
+
+    stage('env-variable') {
+    	steps {
+    	sh "printenv"
     }
     }
 

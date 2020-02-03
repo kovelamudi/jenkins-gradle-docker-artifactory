@@ -1,6 +1,8 @@
 pipeline {
     agent {node{ label 'linux'}}
-
+environment { 
+USER = 'MONITOR'
+}
     stages {
 
        stage('Build') {
@@ -25,7 +27,7 @@ pipeline {
 
     post {
        always {
-          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline:user ${env.GIT_AUTHOR_NAME} and ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
+          mail(to: 'madhava.kovelamudi@orbisfn.com', subject: "Status of pipeline:user ${USER} and ${currentBuild.fullDisplayName}", body: "Project: ${env.BUILD_URL} has result ${currentBuild.result}")
        }
 
        success {

@@ -19,7 +19,6 @@ repositories {
 
 dependencies {
     implementation 'org.influxdb:influxdb-java:2.15'
-    implementation(group: 'ro.trc.common', name: 'StaPI', version: '0.0.4')
     implementation group: 'javax.activation', name: 'activation', version: '1.1.1'
     implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
     implementation group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.27'

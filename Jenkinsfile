@@ -5,7 +5,7 @@ pipeline {
     stage('build user') {
       steps {
         wrap([$class: 'BuildUser']) {
-          sh 'echo "${BUILD_USER}"'
+	GET_BUILD_USER = sh ( script: 'echo "${BUILD_USER}"', returnStdout: true).trim()
         }
       }
     }

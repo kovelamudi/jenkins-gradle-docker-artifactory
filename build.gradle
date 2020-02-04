@@ -39,8 +39,8 @@ application {
     mainClassName = 'com.orbis.stapi.Server'
 }
 
-version = '0.0.4'
-group = 'ro.trc.common'
+version = '0.0.1'
+group = 'com.orbis.stapi.Server'
 sourceCompatibility = '11'
 //buildInfo.build.name='my-super-cool-build'
 //buildInfo.build.number='m2019'

@@ -3,7 +3,7 @@ pipeline {
         dockerfile true	
 	label 'docker-testing'
     }
-}
+
     stages {
         stage('Test') {
             steps {

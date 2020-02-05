@@ -1,5 +1,5 @@
 pipeline {
-    agent {node{ label 'docker-testing'}}
+    agent {node{ label 'docker-slave'}}
 environment { 
 USER = 'MONITOR'
 }

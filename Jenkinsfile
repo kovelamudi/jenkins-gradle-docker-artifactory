@@ -1,7 +1,7 @@
 pipeline {
     agent {
-        {dockerfile true}	
-	label 'docker-testing'
+        dockerfile true	
+	
     }
 
     stages {

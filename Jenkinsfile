@@ -1,10 +1,12 @@
 pipeline {
-    agent docker
+    agent {
+	label 'docker-slave'
+} 
 
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'docker info'
             }
         }
     }

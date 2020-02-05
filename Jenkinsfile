@@ -1,9 +1,10 @@
 pipeline {
     agent {
         dockerfile { 
-filename 'Dockerfile.build'
-label 'docker-testing'
+		filename 'Dockerfile.build'
+		label 'docker-testing'
     }
+}
     stages {
         stage('Test') {
             steps {
@@ -12,3 +13,4 @@ label 'docker-testing'
         }
     }
 }
+

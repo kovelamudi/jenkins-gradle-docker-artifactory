@@ -14,7 +14,7 @@ stages {
 			}
             steps {
 	
-       sh 'docker info'
+       sh 'gradle clean build artifactoryPublish'
 
         }
     }

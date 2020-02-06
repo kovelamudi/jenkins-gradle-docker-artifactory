@@ -3,10 +3,10 @@ agent none
 stages {
         stage('build') {
 		agent{
-			docker{
+			docker{		
+				image 'gradle'
 				args '-u 1000'
 				args '-v /home/orbis/workspace/gradledockerjenkins_UAT:/root/gradledockerjenkins_UAT'				
-				image 'gradle'
 				}
 			}
             steps {

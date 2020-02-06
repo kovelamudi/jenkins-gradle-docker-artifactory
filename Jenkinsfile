@@ -9,7 +9,7 @@ pipeline {
 		agent{
 			docker{
 				image 'gradle'
-				args '-u root:sudo -v $HOME/workspace/gradledockerjenkins_UAT:/gradledockerjenkins_UAT'
+				args '-u root:sudo'
 				}
 			}
             steps {

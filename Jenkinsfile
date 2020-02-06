@@ -14,7 +14,7 @@ pipeline {
 			}
             steps {
 	
-       sh 'gradle build'
+       sh 'docker info'
 
         }
     }

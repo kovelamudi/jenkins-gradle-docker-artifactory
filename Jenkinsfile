@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                docker.build("kovelamudi/gradle", '-f ./Dockerfile .')
+             sh docker build -t gradle:v1 .
             }
         }
     }

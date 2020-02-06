@@ -5,7 +5,7 @@ stages {
 stage(build1){
 
 steps{
-script {sh 'docker build -t .'}
+script {sh 'sudo docker build -t .'}
 }
 }
         stage('build') {

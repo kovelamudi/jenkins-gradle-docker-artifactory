@@ -1,4 +1,7 @@
 pipeline {
+
+def app
+
     agent {
 	label 'docker-testing'
 } 
@@ -6,7 +9,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'docker info'
+                app = docker.build("kovelamudi/gradle")
             }
         }
     }

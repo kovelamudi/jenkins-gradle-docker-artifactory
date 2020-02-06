@@ -1,4 +1,4 @@
-def app
+
 pipeline {
 
     agent {
@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                app = docker.build("kovelamudi/gradle", '-f ./Dockerfile .')
+                docker.build("kovelamudi/gradle", '-f ./Dockerfile .')
             }
         }
     }

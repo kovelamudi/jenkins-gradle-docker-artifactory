@@ -4,8 +4,8 @@ stages {
         stage('build') {
 		agent{
 			docker{
+				args '-u 1000'				
 				image 'gradle'
-				args '-u 1000'
 				}
 			}
             steps {

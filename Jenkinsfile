@@ -1,6 +1,13 @@
 pipeline {
 agent none
 stages {
+
+stage(build1){
+
+steps{
+script {sh 'docker build -t .'}
+}
+}
         stage('build') {
 		agent{
 			docker{	

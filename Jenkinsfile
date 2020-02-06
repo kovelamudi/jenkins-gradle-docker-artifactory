@@ -5,11 +5,16 @@ pipeline {
 } 
 
     stages {
-        stage('Test') {
+        stage('build') {
+		agent{
+			docker{
+				image 'gradle'
+				}
+			}
             steps {
-		script{
-             docker.build("gradle-v1", '-f Dockerfile .')
-            }
+	
+       sh 'gradle build'
+
         }
     }
 }

@@ -5,7 +5,7 @@ stages {
 		agent{
 			docker{
 				image 'gradle'
-				args '-u root:sudo'
+				args '-u 1000'
 				}
 			}
             steps {

@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-             sh docker build -t gradle-v1 
+             sh docker build -t gradle-v1 .
             }
         }
     }

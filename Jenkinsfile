@@ -1,8 +1,5 @@
 pipeline {
 
-    agent {
-	label 'docker-testing'
-} 
 
     stages {
         stage('build') {

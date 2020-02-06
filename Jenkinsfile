@@ -1,15 +1,16 @@
 pipeline {
 
     agent {
-	dockerfile true
+	label 'docker-testing'
 } 
 
     stages {
         stage('Test') {
             steps {
-             sh docker build -t gradle-v1 .
+		script{
+             docker.build("gradle-v1", '-f ./Dockerfile .')
             }
         }
     }
 }
-
+}

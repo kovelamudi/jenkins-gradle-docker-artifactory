@@ -1,6 +1,5 @@
-pipeline {
-
 def app
+pipeline {
 
     agent {
 	label 'docker-testing'

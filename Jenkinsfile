@@ -1,5 +1,5 @@
 pipeline {
-agent none
+agent docker-testing
 stages {
 
 stage(build1){

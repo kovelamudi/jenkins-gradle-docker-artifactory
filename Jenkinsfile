@@ -25,7 +25,7 @@ pipeline {
             }
            steps {
 	      sh "scp -r build/distributions/*.tar monitor@vtbuild:stapi_uat/bin/stapi${env.BUILD_NUMBER}.tar"
-	      sh "ssh monitor@vtbuild 'chmod -w /home/orbis/stapi_uat/bin/*.tar'"		
+	      sh "ssh monitor@vtbuild 'chmod -w stapi_uat/bin/*.tar'"		
            }
        }
     }

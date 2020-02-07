@@ -23,7 +23,7 @@ pipeline {
        }
 
        stage("deploy to uat") {
-       agent(docker-testing)
+       agent{docker-testing}
            when {
                 branch 'UAT'
             }

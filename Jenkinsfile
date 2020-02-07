@@ -26,8 +26,8 @@ pipeline {
                 branch 'UAT'
             }
            steps {
-               sh "cp -r build/distributions/*.tar stapi_uat/bin/stapi${env.BUILD_NUMBER}.tar"
-               sh "chmod -w stapi_uat/bin/*.tar"
+               sh "cp -r build/distributions/*.tar /home/orbis/stapi_uat/bin/stapi${env.BUILD_NUMBER}.tar"
+               sh "chmod -w /home/orbis/stapi_uat/bin/*.tar"
            }
        }
     }

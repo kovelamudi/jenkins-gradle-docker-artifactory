@@ -1,9 +1,10 @@
 pipeline {
-    agent {dockerfile true}
+    agent none
 
     stages {
 
        stage('Build') {
+	agent {dockerfile true}
           when {
              anyOf {
                  branch 'UAT'
@@ -22,6 +23,7 @@ pipeline {
        }
 
        stage("deploy to uat") {
+       agent(docker-testing)
            when {
                 branch 'UAT'
             }

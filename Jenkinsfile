@@ -11,10 +11,6 @@ pipeline {
                  branch 'master'
              }
           }
-          tools {
-              gradle "gradle"
-              jdk "jdk11"
-          }
 
           steps {
               sh "gradle clean build artifactoryPublish"
@@ -28,8 +24,8 @@ pipeline {
                 branch 'UAT'
             }
            steps {
-               sh "cp -r build/distributions/*.tar /home/orbis/stapi_uat/bin/stapi${env.BUILD_NUMBER}.tar"
-               sh "chmod -w /home/orbis/stapi_uat/bin/*.tar"
+	      sh "scp -r build/distributions/*.tar monitor@vtbuild:stapi_uat/bin/stapi${env.BUILD_NUMBER}.tar"
+	      sh "ssh monitor@vtbuild 'chmod -w /home/orbis/stapi_uat/bin/*.tar'"		
            }
        }
     }
